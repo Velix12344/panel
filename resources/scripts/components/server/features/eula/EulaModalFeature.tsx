@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ServerContext } from '@/state/server';
 import Modal from '@/components/elements/Modal';
 import tw from 'twin.macro';
-import Button from '@/components/elements/Button';
+import { Button } from '@/components/elements/button/index';
 import saveFileContents from '@/api/server/files/saveFileContents';
 import FlashMessageRender from '@/components/FlashMessageRender';
 import useFlash from '@/plugins/useFlash';
@@ -72,14 +72,14 @@ const EulaModalFeature = () => {
                     target={'_blank'}
                     css={tw`text-primary-300 underline transition-colors duration-150 hover:text-primary-400`}
                     rel={'noreferrer noopener'}
-                    href='https://www.minecraft.net/eula'
+                    href='https://account.mojang.com/documents/minecraft_eula'
                 >
                     Minecraft&reg; EULA
                 </a>
                 .
             </p>
             <div css={tw`mt-8 sm:flex items-center justify-end`}>
-                <Button isSecondary onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
+                <Button variant={Button.Variants.Secondary} onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
                     Cancel
                 </Button>
                 <Button onClick={onAcceptEULA} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>
